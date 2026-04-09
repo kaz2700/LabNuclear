@@ -53,6 +53,9 @@ c la subrutina modifica A (parametros ajustados), COVAR y CHISQ
       
 c muestra los resultados del ajuste
       WRITE(*,100) A(1),A(2),A(3),CHISQ
+      
+c abre archivo para guardar datos de ajuste
+      OPEN(11,FILE='ajuste.dat',STATUS='UNKNOWN')
  100  FORMAT('a = ',F12.6,/,'b = ',F12.6,/,'c = ',F12.6,/,
      *'chi^2 = ',F12.6)
       
@@ -61,12 +64,15 @@ c compara los datos originales con el ajuste
       WRITE(*,*) 'Datos originales vs ajustados:'
       WRITE(*,200) 
  200  FORMAT('  x       y_orig     y_ajust    residuo')
-      DO I=1,NF
-        YCALC=A(1)+A(2)*X(I)+A(3)*X(I)*X(I)
-        RES=Y(I)-YCALC
-        WRITE(*,201) X(I),Y(I),YCALC,RES
+       DO I=1,NF
+         YCALC=A(1)+A(2)*X(I)+A(3)*X(I)*X(I)
+         RES=Y(I)-YCALC
+         WRITE(*,201) X(I),Y(I),YCALC,RES
+         WRITE(11,202) X(I),Y(I),YCALC,RES
  201    FORMAT(F5.1,3F11.4)
-      END DO
+ 202    FORMAT(F10.4,3F12.6)
+       END DO
+       CLOSE(11)
       
       END
       
