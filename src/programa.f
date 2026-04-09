@@ -13,7 +13,7 @@ c COVAR: matriz de covarianza de los parametros
       DIMENSION COVAR(MMAX,MMAX)
       
 c abre el archivo de datos para lectura
-      OPEN(10,FILE='cuadratica.dat',STATUS='OLD')
+      OPEN(10,FILE='data/cuadratica.dat',STATUS='OLD')
       
 c lee los datos del archivo: x, y, sigma
 c NF cuenta el numero de puntos leidos
@@ -55,7 +55,7 @@ c muestra los resultados del ajuste
       WRITE(*,100) A(1),A(2),A(3),CHISQ
       
 c abre archivo para guardar datos de ajuste
-      OPEN(11,FILE='ajuste.dat',STATUS='UNKNOWN')
+      OPEN(11,FILE='data/ajuste.dat',STATUS='UNKNOWN')
  100  FORMAT('a = ',F12.6,/,'b = ',F12.6,/,'c = ',F12.6,/,
      *'chi^2 = ',F12.6)
       
