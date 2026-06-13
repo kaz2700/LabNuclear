@@ -32,7 +32,7 @@ otro a 1274 keV, ambos provenientes de la coincidencia real 511+1274.
 - Sigma: $\sigma = 2.83$ canales
 - FWHM: $6.65$ canales
 - Amplitud: $A = 552.8$
-- Fondo: $b = 50.3$
+- Fondo: $b = 68.2$
 - **Área:** $\mathrm{Area} = 3915.7$
 
 
@@ -44,7 +44,7 @@ otro a 1274 keV, ambos provenientes de la coincidencia real 511+1274.
 - Sigma: $\sigma = 3.44$ canales
 - FWHM: $8.09$ canales
 - Amplitud: $A = 44.2$
-- Fondo: $b = 25.8$
+- Fondo: $b = 28.4$
 - **Área:** $\mathrm{Area} = 381.1$
 
 ### 2.2 Coincidencias accidentales totales a 157°
@@ -76,7 +76,7 @@ detector 1 (que también ve 511 keV).
 - Sigma: $\sigma = 2.97$ canales
 - FWHM: $6.99$ canales
 - Amplitud: $A = 6672.0$
-- Fondo lineal: $c_0 = 296.0$, $c_1 = -4.0121$
+- Fondo lineal: $c_0 = 337.8$, $c_1 = -4.0121$
 - **Área:** $\mathrm{Area} = 49658.8$
 
 
@@ -194,9 +194,9 @@ con eficiencia razonable.
 
 | Pico | $x_0$ (canal) | $\sigma$ (canal) | FWHM (canal) | Amplitud | Fondo | Área |
 |------|:-------------:|:-----------------:|:------------:|:--------:|:----:|:---:|
-| 511 keV (157°) | 78.37 | 2.83 | 6.65 | 553 | 50.3 | 3916 |
-| 1274 keV (157°) | 196.77 | 3.44 | 8.09 | 44 | 25.8 | 381 |
-| 511 keV (180°) | 78.42 | 2.97 | 6.99 | 6672 | 296.0 | 49659 |
+| 511 keV (157°) | 78.37 | 2.83 | 6.65 | 553 | 68.2 | 3916 |
+| 1274 keV (157°) | 196.77 | 3.44 | 8.09 | 44 | 28.4 | 381 |
+| 511 keV (180°) | 78.42 | 2.97 | 6.99 | 6672 | 337.8 | 49659 |
 
 ### 7.2 Áreas y ratios
 

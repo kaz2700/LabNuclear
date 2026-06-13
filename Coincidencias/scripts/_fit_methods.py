@@ -78,7 +78,8 @@ def run_fortran_fit(x, y, x0_approx, fortran_bin='bin/gaussian_background'):
     fwhm = 2.3548 * sigma
 
     x_fit_arr = x
-    bg_line_arr = a_bg_f + b_bg_f * (x0_re - shift + x - x[0])
+    # background in original coords: x_reindexed = (x - x[0]) + 1 + shift
+    bg_line_arr = a_bg_f + b_bg_f * (x - x[0] + 1 + shift)
     y_fit_arr = amp * np.exp(-(x - x0)**2 / (2 * sigma**2)) + bg_line_arr
     resid_arr = y - y_fit_arr
 
@@ -115,8 +116,9 @@ def plot_fortran_fit(ax, x_fine, fit):
     if fit is None:
         return
     sf = fit.get('shift', 0)
-    x0_re = fit.get('x0_re', fit.get('x0', 0))
-    bg = fit.get('a_bg', fit.get('bg', 0)) + fit.get('b_bg', 0) * (x0_re - sf + x_fine - x_fine[0])
+    xmin = fit.get('xmin', x_fine[0])
+    # background in original coords: x_reindexed = (x - xmin) + 1 + sf
+    bg = fit.get('a_bg', fit.get('bg', 0)) + fit.get('b_bg', 0) * (x_fine - xmin + 1 + sf)
     y_gauss = gauss(x_fine, fit['A'], fit['x0'], fit['sigma'])
     ax.plot(x_fine, y_gauss + bg, color='#d62728', linestyle='-', linewidth=1.5,
             label='Fortran (log+LFIT)')
@@ -139,15 +141,15 @@ def make_resid_panel(ax, x, y, fit, xmin, xmax):
     if fit is None:
         return
     f = fit
+    sf = f.get('shift', 0)
     if 'x_fit' in f and f['x_fit'] is not None:
         mask = (x >= f['x_fit'][0]) & (x <= f['x_fit'][-1])
     else:
         mask = (x >= xmin) & (x <= xmax)
     x_local = x[mask]
     y_local = y[mask]
-    sf = f.get('shift', 0)
-    x0_re = f.get('x0_re', f.get('x0', 0))
-    bg = f.get('a_bg', f.get('bg', 0)) + f.get('b_bg', 0) * (x0_re - sf + x_local - x_local[0])
+    # background in original coords: x_reindexed = (x - x_fit[0]) + 1 + sf
+    bg = f.get('a_bg', f.get('bg', 0)) + f.get('b_bg', 0) * (x_local - f['x_fit'][0] + 1 + sf)
     y_model = gauss(x_local, f['A'], f['x0'], f['sigma']) + bg
     resid = y_local - y_model
     ax.step(x_local, resid, where='mid', color='#d62728', linewidth=0.6, alpha=0.7)

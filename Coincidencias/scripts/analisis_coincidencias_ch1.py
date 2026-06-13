@@ -160,7 +160,7 @@ if fit_511_511_180 is None:
         print(f"Fallback: {fit_summary(fit_511_511_180, '511+511')}")
 
 # Small peak ~190-210
-for lo, hi in [(190, 215), (188, 218)]:
+for lo, hi in [(180, 220), (190, 215), (188, 218)]:
     mask = (ch180 >= lo) & (ch180 <= hi)
     fit_bg_180 = fm.run_fortran_fit(ch180[mask], cnts180[mask], 197, FORTRAN_BIN)
     if fit_bg_180:
@@ -316,7 +316,7 @@ fig, (ax, ax_res) = plt.subplots(2, 1, figsize=(12, 7),
 ax.step(ch180, cnts180, where='mid', color='black', linewidth=0.7, label='$^{22}$Na 180°')
 xfine = np.linspace(150, 300, 500)
 fm.plot_fortran_fit(ax, xfine, fit_bg_180)
-ax.axvspan(190, 215, color='yellow', alpha=0.08)
+ax.axvspan(lo, hi, color='yellow', alpha=0.08)
 ax.set_xlim(150, 300)
 ax.set_ylim(0, 60)
 ax.set_xlabel('Canal', fontsize=12)

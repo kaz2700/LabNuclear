@@ -112,7 +112,7 @@ if __name__ == '__main__':
         ('511_157',  ch_157, counts_157, 66,  90,  78.05),
         ('1274_157', ch_157, counts_157, 188, 210, 196.45),
         ('511_180',  ch_180, counts_180, 66,  92,  78.39),
-        ('pico_200', ch_180, counts_180, 190, 215, 196.81),
+        ('pico_200', ch_180, counts_180, 180, 220, 196.81),
     ]
 
     results = {}
@@ -190,7 +190,7 @@ if __name__ == '__main__':
     plot_peak_fortran(ch_180, counts_180, 66, 92,
               '$^{22}$Na a 180° — Pico 511+511 keV (ajuste Fortran)',
               '22Na_180_pico_511_511.png', results['511_180'])
-    plot_peak_fortran(ch_180, counts_180, 190, 215,
+    plot_peak_fortran(ch_180, counts_180, 180, 220,
               '$^{22}$Na a 180° — Pico residual ~510 keV (ajuste Fortran)',
               '22Na_180_pico_fondo.png', results['pico_200'])
 
