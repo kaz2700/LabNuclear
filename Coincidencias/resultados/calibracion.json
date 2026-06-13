@@ -1,0 +1,9 @@
+{
+  "metodo": "Fortran (src/gaussian_background.f)",
+  "a_keV": 33.032828574494715,
+  "b_keV_per_ch": 6.295456067853395,
+  "E1_keV": 1173.2,
+  "ch1": 181.109543,
+  "E2_keV": 1332.5,
+  "ch2": 206.413508
+}

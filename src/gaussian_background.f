@@ -137,10 +137,10 @@
       
       WRITE(*,*) 'Data saved to final.dat'
       
-  200  FORMAT(F5.1,3F12.6)
-  300  FORMAT(F5.1,2F12.6)
-  500  FORMAT(F5.1,2F12.6)
-  700  FORMAT(F5.1,2F12.6)
+  200  FORMAT(F6.1,1X,F12.6,1X,F12.6,1X,F12.6)
+  300  FORMAT(F6.1,1X,F12.6,1X,F12.6)
+  500  FORMAT(F6.1,1X,F12.6,1X,F12.6)
+  700  FORMAT(F6.1,1X,F12.6,1X,F12.6)
        
       END
       
