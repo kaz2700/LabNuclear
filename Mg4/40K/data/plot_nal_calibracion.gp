@@ -1,0 +1,17 @@
+set terminal pngcairo size 2000,1200 enhanced font 'sans,13'
+set output '/home/comoving/LabNuclear/Mg4/40K/plots/nal_calibracion.png'
+set title 'Verificacion calibracion NaI(Tl): lineas de fondo esperadas'
+set xlabel 'Canal'
+set ylabel 'Cuentas'
+set grid lw 0.5
+set logscale y
+set arrow from 165.6,graph 0 to 165.6,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 188.6,graph 0 to 188.6,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 196.9,graph 0 to 196.9,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 293.0,graph 0 to 293.0,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 311.4,graph 0 to 311.4,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 359.6,graph 0 to 359.6,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 468.0,graph 0 to 468.0,graph 1 nohead dt 3 lw 1 lc rgb '#888888'
+set arrow from 165.6,graph 0 to 165.6,graph 1 nohead dt 2 lw 2 lc rgb '#cc0000'
+set arrow from 468.0,graph 0 to 468.0,graph 1 nohead dt 2 lw 2 lc rgb '#cc0000'
+plot 'data/fondo_nal.txt' using 1:2 with lines lw 1 lc rgb '#003366' title 'Fondo NaI(Tl)'

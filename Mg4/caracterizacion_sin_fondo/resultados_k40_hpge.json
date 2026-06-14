@@ -1,0 +1,320 @@
+{
+  "input_spectrum": "/home/comoving/LabNuclear/Mg4/datos/Mg4_GeHP.txt",
+  "background_file": "/home/comoving/LabNuclear/Mg4/datos/fondo_GeHP_BEGe.dat",
+  "live_time_s": 783.0,
+  "k40_seed_channel": 5189,
+  "k40_seed_counts": 1717,
+  "roi_channel_start": 5176,
+  "roi_channel_end": 5202,
+  "x0_channel": 5189.086426,
+  "sigma_channel": 3.949662,
+  "fwhm_channel": 9.3006640776,
+  "amplitude_counts": 1618.233765,
+  "area_net_counts": 16021.055482778245,
+  "area_net_rate_cps": 20.461118113382177,
+  "fortran_background_a": 98.443901,
+  "fortran_background_b": -0.631707,
+  "calibration_gain_609_2615": {
+    "anchor_1": {
+      "energy_keV": 609.312,
+      "channel": 2179,
+      "counts": 41,
+      "source": "214Bi en Mg4"
+    },
+    "anchor_2": {
+      "energy_keV": 2614.511,
+      "channel": 9205,
+      "counts": 571,
+      "source": "208Tl en Mg4"
+    },
+    "b_gain_keV_per_ch": 0.28539695417022487
+  },
+  "calibration": {
+    "description": "Ganancia de 609+2615 keV, offset para 40K exacto; 1764.52 (214Bi) no detectable en Mg4",
+    "anchor_609": {
+      "energy_keV": 609.312,
+      "channel": 2179,
+      "source": "214Bi en Mg4"
+    },
+    "anchor_2615": {
+      "energy_keV": 2614.511,
+      "channel": 9205,
+      "source": "208Tl en Mg4"
+    },
+    "anchor_40K": {
+      "energy_keV": 1460.82,
+      "channel": 5189.086426,
+      "source": "40K en Mg4"
+    },
+    "a_keV": -20.129460906458007,
+    "b_keV_per_channel": 0.28539695417022487,
+    "ch_1764_pred": 6253.218315154144
+  },
+  "1764_keV": {
+    "channel_predicted": 6253.218315154144,
+    "channel_observed": 6251,
+    "counts_at_observed": 18,
+    "peak_significant": false,
+    "nota": "La linea de 1764.52 keV (214Bi) del fondo NO es visible en Mg4 (< 20 cuentas, ruido)"
+  },
+  "fondo_verification": [
+    {
+      "energy_ref_keV": 46.539,
+      "reaction": "210Pb",
+      "channel_predicted": 233.59906240167385,
+      "channel_observed": 196,
+      "counts_observed": 545,
+      "energy_observed_keV": 35.80834211090607,
+      "delta_keV": -10.730657889093933,
+      "is_peak": true,
+      "rate_cps_e6": 68.0,
+      "rate_err_cps_e6": 22.0
+    },
+    {
+      "energy_ref_keV": 53.225,
+      "reaction": "234U, 214Pb",
+      "channel_predicted": 257.02608186457996,
+      "channel_observed": 252,
+      "counts_observed": 424,
+      "energy_observed_keV": 51.79057154443866,
+      "delta_keV": -1.4344284555613385,
+      "is_peak": true,
+      "rate_cps_e6": 226.0,
+      "rate_err_cps_e6": 35.0
+    },
+    {
+      "energy_ref_keV": 66.2,
+      "reaction": "n,f",
+      "channel_predicted": 302.4890758118142,
+      "channel_observed": 286,
+      "counts_observed": 146,
+      "energy_observed_keV": 61.49406798622631,
+      "delta_keV": -4.70593201377369,
+      "is_peak": true,
+      "rate_cps_e6": 40.0,
+      "rate_err_cps_e6": 20.0
+    },
+    {
+      "energy_ref_keV": 74.816,
+      "reaction": "212Pb, 214Pb, 211Pb, 235U",
+      "channel_predicted": 332.6786061277579,
+      "channel_observed": 369,
+      "counts_observed": 96,
+      "energy_observed_keV": 85.18201518235497,
+      "delta_keV": 10.366015182354971,
+      "is_peak": true,
+      "rate_cps_e6": 177.0,
+      "rate_err_cps_e6": 32.0
+    },
+    {
+      "energy_ref_keV": 77.105,
+      "reaction": "214Bi, 219Rn, 212Pb, 214Pb",
+      "channel_predicted": 340.6990140772931,
+      "channel_observed": 380,
+      "counts_observed": 137,
+      "energy_observed_keV": 88.32138167822744,
+      "delta_keV": 11.216381678227435,
+      "is_peak": false,
+      "rate_cps_e6": 113.0,
+      "rate_err_cps_e6": 32.0
+    },
+    {
+      "energy_ref_keV": 84.343,
+      "reaction": "231Th, 228Th",
+      "channel_predicted": 366.06018172200066,
+      "channel_observed": 390,
+      "counts_observed": 219,
+      "energy_observed_keV": 91.1753512199297,
+      "delta_keV": 6.832351219929691,
+      "is_peak": true,
+      "rate_cps_e6": 188.0,
+      "rate_err_cps_e6": 35.0
+    },
+    {
+      "energy_ref_keV": 114.673,
+      "reaction": "7Be, 228Ac, 238U",
+      "channel_predicted": 472.33321497206714,
+      "channel_observed": 468,
+      "counts_observed": 6963,
+      "energy_observed_keV": 113.43631364520724,
+      "delta_keV": -1.2366863547927665,
+      "is_peak": true,
+      "rate_cps_e6": 41.0,
+      "rate_err_cps_e6": 23.0
+    },
+    {
+      "energy_ref_keV": 186.211,
+      "reaction": "226Ra",
+      "channel_predicted": 722.9946146635691,
+      "channel_observed": 691,
+      "counts_observed": 591,
+      "energy_observed_keV": 177.07983442516738,
+      "delta_keV": -9.131165574832636,
+      "is_peak": true,
+      "rate_cps_e6": 222.0,
+      "rate_err_cps_e6": 46.0
+    },
+    {
+      "energy_ref_keV": 238.632,
+      "reaction": "212Pb",
+      "channel_predicted": 906.6721179936625,
+      "channel_observed": 905,
+      "counts_observed": 45,
+      "energy_observed_keV": 238.15478261759552,
+      "delta_keV": -0.47721738240448985,
+      "is_peak": true,
+      "rate_cps_e6": 74.0,
+      "rate_err_cps_e6": 32.0
+    },
+    {
+      "energy_ref_keV": 295.224,
+      "reaction": "214Pb",
+      "channel_predicted": 1104.964353327911,
+      "channel_observed": 1072,
+      "counts_observed": 50,
+      "energy_observed_keV": 285.8160739640231,
+      "delta_keV": -9.407926035976914,
+      "is_peak": true,
+      "rate_cps_e6": 144.0,
+      "rate_err_cps_e6": 40.0
+    },
+    {
+      "energy_ref_keV": 351.932,
+      "reaction": "214Pb",
+      "channel_predicted": 1303.6630400916688,
+      "channel_observed": 1270,
+      "counts_observed": 35,
+      "energy_observed_keV": 342.3246708897276,
+      "delta_keV": -9.607329110272417,
+      "is_peak": true,
+      "rate_cps_e6": 213.0,
+      "rate_err_cps_e6": 31.0
+    },
+    {
+      "energy_ref_keV": 609.312,
+      "reaction": "214Bi",
+      "channel_predicted": 2205.494668772912,
+      "channel_observed": 2179,
+      "counts_observed": 41,
+      "energy_observed_keV": 601.750502230462,
+      "delta_keV": -7.56149776953805,
+      "is_peak": true,
+      "rate_cps_e6": 190.0,
+      "rate_err_cps_e6": 26.0
+    },
+    {
+      "energy_ref_keV": 1460.82,
+      "reaction": "40K",
+      "channel_predicted": 5189.086426,
+      "channel_observed": 5189,
+      "counts_observed": 1717,
+      "energy_observed_keV": 1460.795334282839,
+      "delta_keV": -0.024665717161042267,
+      "is_peak": true,
+      "rate_cps_e6": 843.0,
+      "rate_err_cps_e6": 30.0
+    },
+    {
+      "energy_ref_keV": 1764.52,
+      "reaction": "214Bi",
+      "channel_predicted": 6253.218315154144,
+      "channel_observed": 6251,
+      "counts_observed": 18,
+      "energy_observed_keV": 1763.8868996116178,
+      "delta_keV": -0.6331003883822177,
+      "is_peak": true,
+      "rate_cps_e6": 96.0,
+      "rate_err_cps_e6": 16.0
+    }
+  ],
+  "bg_lines_expected": [
+    {
+      "energy_keV": 46.539,
+      "reaction": "210Pb",
+      "channel_predicted": 233.59906240167385,
+      "detectable": false
+    },
+    {
+      "energy_keV": 53.225,
+      "reaction": "234U, 214Pb",
+      "channel_predicted": 257.02608186457996,
+      "detectable": true
+    },
+    {
+      "energy_keV": 66.2,
+      "reaction": "n,f",
+      "channel_predicted": 302.4890758118142,
+      "detectable": false
+    },
+    {
+      "energy_keV": 74.816,
+      "reaction": "212Pb, 214Pb, 211Pb, 235U",
+      "channel_predicted": 332.6786061277579,
+      "detectable": true
+    },
+    {
+      "energy_keV": 77.105,
+      "reaction": "214Bi, 219Rn, 212Pb, 214Pb",
+      "channel_predicted": 340.6990140772931,
+      "detectable": true
+    },
+    {
+      "energy_keV": 84.343,
+      "reaction": "231Th, 228Th",
+      "channel_predicted": 366.06018172200066,
+      "detectable": false
+    },
+    {
+      "energy_keV": 114.673,
+      "reaction": "7Be, 228Ac, 238U",
+      "channel_predicted": 472.33321497206714,
+      "detectable": true
+    },
+    {
+      "energy_keV": 186.211,
+      "reaction": "226Ra",
+      "channel_predicted": 722.9946146635691,
+      "detectable": false
+    },
+    {
+      "energy_keV": 238.632,
+      "reaction": "212Pb",
+      "channel_predicted": 906.6721179936625,
+      "detectable": true
+    },
+    {
+      "energy_keV": 295.224,
+      "reaction": "214Pb",
+      "channel_predicted": 1104.964353327911,
+      "detectable": false
+    },
+    {
+      "energy_keV": 351.932,
+      "reaction": "214Pb",
+      "channel_predicted": 1303.6630400916688,
+      "detectable": false
+    },
+    {
+      "energy_keV": 609.312,
+      "reaction": "214Bi",
+      "channel_predicted": 2205.494668772912,
+      "detectable": true
+    },
+    {
+      "energy_keV": 1460.82,
+      "reaction": "40K",
+      "channel_predicted": 5189.086426,
+      "detectable": true
+    },
+    {
+      "energy_keV": 1764.52,
+      "reaction": "214Bi",
+      "channel_predicted": 6253.218315154144,
+      "detectable": false
+    }
+  ],
+  "plot_full_png": "/home/comoving/LabNuclear/Mg4/caracterizacion_sin_fondo/plots/k40_hpge_full.png",
+  "plot_png": "/home/comoving/LabNuclear/Mg4/caracterizacion_sin_fondo/plots/k40_hpge_fit.png",
+  "plot_verificacion_png": "/home/comoving/LabNuclear/Mg4/caracterizacion_sin_fondo/plots/k40_hpge_verificacion.png",
+  "fortran_stdout": "Background: y =    98.443901 +    -0.631707 * x\n Data saved to gaussian.dat\n Data saved to log.dat\nFit: a =     1.029170 b =     0.902986 c =    -0.032052\n chi^2 =     0.009801\n Data saved to adjust.dat\nGaussian parameters:\n  Peak position (x0) =    14.086426\n  Width (sigma)      =     3.949662\n  Amplitude (A)      =  1618.233765\n Data saved to final.dat\n"
+}

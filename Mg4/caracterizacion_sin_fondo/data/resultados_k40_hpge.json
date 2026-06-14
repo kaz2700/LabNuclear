@@ -1,0 +1,175 @@
+{
+  "calibracion": {
+    "pendiente_keV_por_ch": 0.28567464202854403,
+    "offset_keV": -17.357251701155654,
+    "R2": 0.9999854995728272,
+    "n_puntos": 5,
+    "anclas": [
+      {
+        "canal": 468,
+        "energia_keV": 114.673
+      },
+      {
+        "canal": 691,
+        "energia_keV": 186.211
+      },
+      {
+        "canal": 905,
+        "energia_keV": 238.632
+      },
+      {
+        "canal": 5189,
+        "energia_keV": 1460.82
+      },
+      {
+        "canal": 9205,
+        "energia_keV": 2614.511
+      }
+    ]
+  },
+  "espectro": {
+    "archivo": "Mg4_GeHP.txt",
+    "tiempo_vivo_s": 783.0,
+    "canales": 16384
+  },
+  "pico_K40": {
+    "canal_aproximado": 5189,
+    "energia_keV": 1460.82
+  },
+  "verificacion": [
+    {
+      "energia_ref_keV": 46.539,
+      "reaccion": "210Pb",
+      "canal_predicho": 223.66791552598244,
+      "canal_observado": 196,
+      "cuentas": 545,
+      "delta_keV": -7.904021863561027,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 53.225,
+      "reaccion": "234U, 214Pb",
+      "canal_predicho": 247.07216293318473,
+      "canal_observado": 252,
+      "cuentas": 424,
+      "delta_keV": 1.4077580900374471,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 66.2,
+      "reaccion": "n,f",
+      "canal_predicho": 292.49096492367977,
+      "canal_observado": 286,
+      "cuentas": 146,
+      "delta_keV": -1.8543040809920655,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 74.816,
+      "reaccion": "212Pb, 214Pb, 211Pb, 235U",
+      "canal_predicho": 322.65114973679005,
+      "canal_observado": 293,
+      "cuentas": 82,
+      "delta_keV": -8.470581586792264,
+      "es_pico": false
+    },
+    {
+      "energia_ref_keV": 77.105,
+      "reaccion": "214Bi, 219Rn, 212Pb, 214Pb",
+      "canal_predicho": 330.6637615099109,
+      "canal_observado": 346,
+      "cuentas": 81,
+      "delta_keV": 4.381174440720585,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 84.343,
+      "reaccion": "231Th, 228Th",
+      "canal_predicho": 356.0002770249169,
+      "canal_observado": 382,
+      "cuentas": 174,
+      "delta_keV": 7.427461553748159,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 114.673,
+      "reaccion": "7Be, 228Ac, 238U",
+      "canal_predicho": 462.1700083830453,
+      "canal_observado": 468,
+      "cuentas": 6963,
+      "delta_keV": 1.66548076820294,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 186.211,
+      "reaccion": "226Ra",
+      "canal_predicho": 712.5877545715645,
+      "canal_observado": 691,
+      "cuentas": 591,
+      "delta_keV": -6.167074059431741,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 238.632,
+      "reaccion": "212Pb",
+      "canal_predicho": 896.0867155845696,
+      "canal_observado": 905,
+      "cuentas": 45,
+      "delta_keV": 2.546299334676661,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 295.224,
+      "reaccion": "214Pb",
+      "canal_predicho": 1094.1862024628813,
+      "canal_observado": 1072,
+      "cuentas": 50,
+      "delta_keV": -6.338035446556432,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 351.932,
+      "reaccion": "214Pb",
+      "canal_predicho": 1292.6917456826882,
+      "canal_observado": 1270,
+      "cuentas": 35,
+      "delta_keV": -6.482456324904717,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 609.312,
+      "reaccion": "214Bi",
+      "canal_predicho": 2193.646755803198,
+      "canal_observado": 2179,
+      "cuentas": 41,
+      "delta_keV": -4.184206720958173,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 1460.82,
+      "reaccion": "40K",
+      "canal_predicho": 5174.33833540416,
+      "canal_observado": 5189,
+      "cuentas": 1717,
+      "delta_keV": 4.188465784959362,
+      "es_pico": true
+    },
+    {
+      "energia_ref_keV": 1764.52,
+      "reaccion": "214Bi",
+      "canal_predicho": 6237.43584326646,
+      "canal_observado": 6251,
+      "cuentas": 18,
+      "delta_keV": 3.8749356192729465,
+      "es_pico": false
+    }
+  ],
+  "problemas": [
+    "  46.5 keV: discrepancia grande dE=-7.9 keV (ch pred 223.7, ch obs 196, cnts 545)",
+    "  74.8 keV: discrepancia grande dE=-8.5 keV (ch pred 322.7, ch obs 293, cnts 82)",
+    "  84.3 keV: discrepancia grande dE=+7.4 keV (ch pred 356.0, ch obs 382, cnts 174)",
+    "  186.2 keV: discrepancia grande dE=-6.2 keV (ch pred 712.6, ch obs 691, cnts 591)",
+    "  295.2 keV: discrepancia grande dE=-6.3 keV (ch pred 1094.2, ch obs 1072, cnts 50)",
+    "  351.9 keV: discrepancia grande dE=-6.5 keV (ch pred 1292.7, ch obs 1270, cnts 35)"
+  ]
+}

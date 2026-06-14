@@ -1,0 +1,62 @@
+{
+  "detector": "NaI(Tl)",
+  "live_time_s": 6375.0,
+  "num_channels": 512,
+  "total_counts": 2861612,
+  "total_rate_cps": 448.88031372549017,
+  "calibration": {
+    "a_keV": -9.13081953524295,
+    "b_keV_per_channel": 3.1412302677852337,
+    "anchors": [
+      {
+        "channel": 165.581882,
+        "fitted_x0": 165.581882,
+        "energy_keV": 511.0,
+        "nuclide": "e+e-"
+      },
+      {
+        "channel": 467.95385699999997,
+        "fitted_x0": 467.95385699999997,
+        "energy_keV": 1460.82,
+        "nuclide": "K-40"
+      }
+    ],
+    "formula": "E = -9.1308 + 3.141230*ch"
+  },
+  "annihilation": {
+    "x0_channel": 165.581882,
+    "sigma_channel": 2.829476,
+    "fwhm_channel": 6.6628500848000005,
+    "amplitude_counts": 387.405762,
+    "chi2": 0.671429,
+    "ndf": 53,
+    "background_a": 3461.886475,
+    "background_b": -17.230457,
+    "chi2_counts": 1000.71,
+    "chi2_counts_red": 19.62,
+    "ndf_counts": 51
+  },
+  "k40": {
+    "x0_channel": 467.95385699999997,
+    "sigma_channel": 9.348454,
+    "fwhm_channel": 22.0137394792,
+    "fwhm_keV": 69.15022475920179,
+    "amplitude_counts": 1444.684448,
+    "area_net_counts": 33853.43386781044,
+    "rate_net_cps": 5.310342567499677,
+    "energy_estimated_keV": 1460.8199999999997,
+    "energy_delta_keV": -2.2737367544323206e-13,
+    "chi2": 0.069139,
+    "chi2_red": 0.0009877,
+    "ndf": 70,
+    "roi_channels": [
+      430,
+      502
+    ],
+    "background_a": 365.313538,
+    "background_b": -2.367933,
+    "chi2_counts": 207.31,
+    "chi2_counts_red": 3.05,
+    "ndf_counts": 68
+  }
+}

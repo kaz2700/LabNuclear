@@ -1,0 +1,10 @@
+live_s=17478
+live_h=4.855
+total_counts=2,422,166
+rate_cps=138.6
+cal_offset=-11.5382
+cal_slope=0.287430
+ch_40k_expected=5122
+max_40k_region=59
+avg_40k_region=46.8
+net_40k_expected_counts=14.7

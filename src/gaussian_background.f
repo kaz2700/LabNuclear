@@ -1,16 +1,22 @@
       PROGRAM GAUSSIAN_BACKGROUND
       PARAMETER (NMAX=1000, MMAX=10)
       DIMENSION X(NMAX),Y(NMAX),Y_BG(NMAX),Y_NET(NMAX)
-     * ,X_BK(1000),Y_BK(1000),X_LN(100),Y_LN(100),SIG_LN(100)
+     * ,X_BK(1000),Y_BK(1000),X_LN(200),Y_LN(200),SIG_LN(200)
      * ,A(MMAX),LISTA(MMAX),COVAR(MMAX,MMAX)
-     
-      EXTERNAL FUNCS
-     
-      X_MIN = 1
-      X_MAX = 27
       
-      X_GAUSS_START = 9
-      X_GAUSS_END = 21
+      EXTERNAL FUNCS
+      CHARACTER*80 ARG
+      
+C     Default Gauss fraction: middle 60% of channels
+      GAUSS_FRAC = 0.60
+      
+C     Read optional command-line argument for GAUSS_FRAC
+      NARG = IARGC()
+      IF (NARG .GE. 1) THEN
+        CALL GETARG(1, ARG)
+        READ(ARG, *, ERR=10) GAUSS_FRAC
+   10   CONTINUE
+      ENDIF
       
       OPEN(10,FILE='data/pico.dat',STATUS='OLD')
       
@@ -20,7 +26,24 @@
       X(NF) = XI
       Y(NF) = YI
       GOTO 1
- 99   CLOSE(10)
+  99   CLOSE(10)
+      
+C     Determine Gauss region and total range dynamically
+      X_MIN = 1
+      X_MAX = NF
+      HALF = (NF * GAUSS_FRAC) / 2.0
+      CENTER = (NF + 1.0) / 2.0
+      X_GAUSS_START = CENTER - HALF
+      X_GAUSS_END = CENTER + HALF
+      
+C     Enforce minimum background channels (3 on each side)
+      IF (X_GAUSS_START .LT. 4.0) X_GAUSS_START = 4.0
+      IF (X_GAUSS_END .GT. NF - 3.0) X_GAUSS_END = NF - 3.0
+C     Ensure minimum Gauss region of 5 channels
+      IF (X_GAUSS_END - X_GAUSS_START .LT. 5.0) THEN
+        X_GAUSS_START = 4.0
+        X_GAUSS_END = NF - 3.0
+      ENDIF
       
       NBK = 0
       DO I = 1, NF

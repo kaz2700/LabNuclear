@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.29)  13 JUN 2026 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.29)  14 JUN 2026 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,52 +307,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<../graficos/ch0/22Na_157_completo.png, id=29, 722.7pt x 361.35pt>
+<../graficos/ch0/22Na_157_completo.png, id=29, 1011.78pt x 433.62pt>
 File: ../graficos/ch0/22Na_157_completo.png Graphic file (type png)
 <use ../graficos/ch0/22Na_157_completo.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_157_completo.png  used on input l
 ine 190.
-(pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
-<../graficos/ch0/22Na_157_pico_511_1274.png, id=31, 794.97pt x 578.16pt>
+(pdftex.def)             Requested size: 455.24411pt x 195.10735pt.
+<../graficos/ch0/22Na_157_pico_511_1274.png, id=31, 867.24pt x 578.16pt>
 File: ../graficos/ch0/22Na_157_pico_511_1274.png Graphic file (type png)
 <use ../graficos/ch0/22Na_157_pico_511_1274.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_157_pico_511_1274.png  used on in
 put line 203.
-(pdftex.def)             Requested size: 386.96027pt x 281.43062pt.
-<../graficos/ch0/22Na_157_pico_1274.png, id=32, 794.97pt x 578.16pt>
+(pdftex.def)             Requested size: 386.96027pt x 257.97292pt.
+<../graficos/ch0/22Na_157_pico_1274.png, id=32, 867.24pt x 578.16pt>
 File: ../graficos/ch0/22Na_157_pico_1274.png Graphic file (type png)
 <use ../graficos/ch0/22Na_157_pico_1274.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_157_pico_1274.png  used on input 
 line 229.
-(pdftex.def)             Requested size: 386.96027pt x 281.43062pt.
+(pdftex.def)             Requested size: 386.96027pt x 257.97292pt.
  [4 <../graficos/ch0/22Na_157_completo.png>]
 [5 <../graficos/ch0/22Na_157_pico_511_1274.png>]
-<../graficos/ch0/22Na_180_completo.png, id=42, 722.7pt x 361.35pt>
+<../graficos/ch0/22Na_180_completo.png, id=42, 1011.78pt x 433.62pt>
 File: ../graficos/ch0/22Na_180_completo.png Graphic file (type png)
 <use ../graficos/ch0/22Na_180_completo.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_180_completo.png  used on input l
 ine 283.
-(pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
-<../graficos/ch0/22Na_180_pico_511_511.png, id=43, 794.97pt x 578.16pt>
+(pdftex.def)             Requested size: 455.24411pt x 195.10735pt.
+<../graficos/ch0/22Na_180_pico_511_511.png, id=43, 867.24pt x 578.16pt>
 File: ../graficos/ch0/22Na_180_pico_511_511.png Graphic file (type png)
 <use ../graficos/ch0/22Na_180_pico_511_511.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_180_pico_511_511.png  used on inp
 ut line 296.
-(pdftex.def)             Requested size: 386.96027pt x 281.43062pt.
+(pdftex.def)             Requested size: 386.96027pt x 257.97292pt.
  [6 <../graficos/ch0/22Na_157_pico_1274.png>] [7 <../graficos/ch0/22Na_180_comp
 leto.png> <../graficos/ch0/22Na_180_pico_511_511.png>]
-<../graficos/ch0/22Na_comparacion.png, id=54, 722.7pt x 505.89pt>
+<../graficos/ch0/22Na_comparacion.png, id=54, 1147.6476pt x 445.1832pt>
 File: ../graficos/ch0/22Na_comparacion.png Graphic file (type png)
 <use ../graficos/ch0/22Na_comparacion.png>
 Package pdftex.def Info: ../graficos/ch0/22Na_comparacion.png  used on input li
 ne 337.
-(pdftex.def)             Requested size: 386.96027pt x 270.87619pt.
-<../graficos/ch0/CoF_vs_FF.png, id=55, 722.7pt x 505.89pt>
+(pdftex.def)             Requested size: 386.96027pt x 150.10359pt.
+<../graficos/ch0/CoF_vs_FF.png, id=55, 1011.78pt x 505.89pt>
 File: ../graficos/ch0/CoF_vs_FF.png Graphic file (type png)
 <use ../graficos/ch0/CoF_vs_FF.png>
 Package pdftex.def Info: ../graficos/ch0/CoF_vs_FF.png  used on input line 355.
 
-(pdftex.def)             Requested size: 386.96027pt x 270.87619pt.
+(pdftex.def)             Requested size: 386.96027pt x 193.48299pt.
  [8 <../graficos/ch0/22Na_comparacion.png>] [9 <../graficos/ch0/CoF_vs_FF.png>]
 <../graficos/ch0/Co60_caracterizacion_completo.png, id=64, 1011.78pt x 433.62pt
 >
@@ -366,16 +366,16 @@ d on input line 426.
 File: ../graficos/ch0/Co60_picos_caracterizacion.png Graphic file (type png)
 <use ../graficos/ch0/Co60_picos_caracterizacion.png>
 Package pdftex.def Info: ../graficos/ch0/Co60_picos_caracterizacion.png  used o
-n input line 452.
+n input line 451.
 (pdftex.def)             Requested size: 455.24411pt x 284.52051pt.
 <../graficos/ch0/Co60_calibrado.png, id=66, 867.24pt x 361.35pt>
 File: ../graficos/ch0/Co60_calibrado.png Graphic file (type png)
 <use ../graficos/ch0/Co60_calibrado.png>
 Package pdftex.def Info: ../graficos/ch0/Co60_calibrado.png  used on input line
- 464.
+ 463.
 (pdftex.def)             Requested size: 386.96027pt x 161.23306pt.
- [10] [11 <../graficos/ch0/Co60_caracterizacion_completo.png> <../graficos/ch0/
-Co60_picos_caracterizacion.png>] [12 <../graficos/ch0/Co60_calibrado.png>] [13]
+ [10 <../graficos/ch0/Co60_caracterizacion_completo.png>] [11 <../graficos/ch0/
+Co60_picos_caracterizacion.png> <../graficos/ch0/Co60_calibrado.png>] [12] [13]
  [14] (./informe_coincidencias.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -384,6 +384,10 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  5044 strings out of 467525
@@ -412,7 +416,7 @@ r12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb>
-Output written on informe_coincidencias.pdf (14 pages, 900481 bytes).
+Output written on informe_coincidencias.pdf (14 pages, 990853 bytes).
 PDF statistics:
  531 PDF objects out of 1000 (max. 8388607)
  105 compressed objects within 2 object streams

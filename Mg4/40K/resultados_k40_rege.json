@@ -1,0 +1,45 @@
+{
+  "input_spectrum": "/home/comoving/LabNuclear/Mg4/datos/fondo_GeHP_REGe.dat",
+  "live_time_s": 17478.46,
+  "num_channels": 8192,
+  "total_counts": 2422166,
+  "total_rate_cps": 138.5800579684938,
+  "calibration": {
+    "a_keV": 0.522,
+    "b_keV_per_channel": 0.23633,
+    "anchors": [
+      {
+        "channel": 2160,
+        "energy_keV": 511.0,
+        "nuclide": "Annihilation"
+      },
+      {
+        "channel": 6179,
+        "energy_keV": 1460.82,
+        "nuclide": "K-40"
+      }
+    ]
+  },
+  "k40": {
+    "ref_energy_keV": 1460.82,
+    "seed_channel": 6179,
+    "roi_channels": [
+      6166,
+      6192
+    ],
+    "x0_local": 13.523198,
+    "x0_channel": 6178.523198,
+    "sigma_channel": 2.805336,
+    "fwhm_channel": 6.6060052128,
+    "fwhm_keV": 1.5611972119410242,
+    "amplitude_counts": 758.836121,
+    "area_net_counts": 5336.085927517076,
+    "rate_net_cps": 0.3052949703530561,
+    "energy_estimated_keV": 1460.69238738334,
+    "energy_delta_keV": -0.12761261665991697,
+    "fit_background_a": 106.974823,
+    "fit_background_b": -2.725808,
+    "chi2": 0.033584,
+    "fortran_stdout": "Background: y =   106.974823 +    -2.725808 * x\n Data saved to gaussian.dat\n Data saved to log.dat\nFit: a =    -4.986955 b =     1.718342 c =    -0.063533\n chi^2 =     0.033584\n Data saved to adjust.dat\nGaussian parameters:\n  Peak position (x0) =    13.523198\n  Width (sigma)      =     2.805336\n  Amplitude (A)      =   758.836121\n Data saved to final.dat\n"
+  }
+}
