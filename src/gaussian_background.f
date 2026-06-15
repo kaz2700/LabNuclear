@@ -104,7 +104,8 @@ C     Ensure minimum Gauss region of 5 channels
       NLOG = NLOG + 1
       X_LN(NLOG) = XI
       Y_LN(NLOG) = YLOGI
-      SIG_LN(NLOG) = SQRT(ABS(YLOGI))
+C     Poisson-based uncertainty on ln(y): sigma = 1/sqrt(y)
+      SIG_LN(NLOG) = 1.0 / SQRT(MAX(1.0, YI))
       GOTO 2
   98  CLOSE(13)
       
@@ -125,6 +126,12 @@ C     Ensure minimum Gauss region of 5 channels
       WRITE(*,400) A(1), A(2), A(3), CHISQ
   400 FORMAT('Fit: a = ',F12.6,' b = ',F12.6,' c = ',F12.6,/
      *' chi^2 = ',F12.6)
+      
+C     Output covariance matrix (variances and covariances of a,b,c)
+      WRITE(*,410) COVAR(1,1), COVAR(2,2), COVAR(3,3)
+      WRITE(*,411) COVAR(1,2), COVAR(1,3), COVAR(2,3)
+  410 FORMAT('var_a = ',E12.5,' var_b = ',E12.5,' var_c = ',E12.5)
+  411 FORMAT('cov_ab = ',E12.5,' cov_ac = ',E12.5,' cov_bc = ',E12.5)
       
       OPEN(14,FILE='data/adjust.dat',STATUS='UNKNOWN')
       DO I = 1, NLOG
@@ -148,6 +155,49 @@ C     Ensure minimum Gauss region of 5 channels
      *'  Peak position (x0) = ',F12.6/
      *'  Width (sigma)      = ',F12.6/
      *'  Amplitude (A)      = ',F12.6)
+      
+C     --- Error propagation from covariance matrix ---
+      C_VAR = COVAR(3,3)
+      B_VAR = COVAR(2,2)
+      A_VAR = COVAR(1,1)
+      C_COV_AB = COVAR(1,2)
+      C_COV_AC = COVAR(1,3)
+      C_COV_BC = COVAR(2,3)
+      
+C     sigma = sqrt(-1/(2*c))
+C     d(sigma)/dc = 1/(4*sigma*c^2)
+      DSIGMA_DC = 1.0D0 / (4.0D0 * SIGMA * C_GAUSS * C_GAUSS)
+      SIGMA_VAR = DSIGMA_DC * DSIGMA_DC * C_VAR
+      IF (SIGMA_VAR .LT. 0.0D0) SIGMA_VAR = 0.0D0
+      SIGMA_ERR = SQRT(SIGMA_VAR)
+      
+C     Ampl = exp(a - b^2/(4c))
+C     dA/da = Ampl
+C     dA/db = Ampl * (-b/(2c))
+C     dA/dc = Ampl * (b^2/(4c^2))
+      DAMPL_DA = AMPL
+      DAMPL_DB = AMPL * (-B_GAUSS / (2.0D0 * C_GAUSS))
+      DAMPL_DC = AMPL * (B_GAUSS*B_GAUSS / (4.0D0 * C_GAUSS*C_GAUSS))
+      
+      AMPL_VAR = DAMPL_DA*DAMPL_DA * A_VAR
+     *         + DAMPL_DB*DAMPL_DB * B_VAR
+     *         + DAMPL_DC*DAMPL_DC * C_VAR
+     *         + 2.0D0*DAMPL_DA*DAMPL_DB * C_COV_AB
+     *         + 2.0D0*DAMPL_DA*DAMPL_DC * C_COV_AC
+     *         + 2.0D0*DAMPL_DB*DAMPL_DC * C_COV_BC
+      IF (AMPL_VAR .LT. 0.0D0) AMPL_VAR = 0.0D0
+      AMPL_ERR = SQRT(AMPL_VAR)
+      
+C     area = Ampl * sigma * sqrt(2*pi)
+C     Using simplified formula (ignores cov(sigma,Ampl)):
+C     d(area) = sqrt(2*pi) * sqrt((sigma*dAmpl)^2 + (Ampl*dsigma)^2)
+      PI = 3.141592653589793D0
+      AREA_ERR = SQRT(2.0D0 * PI)
+     *         * SQRT((SIGMA*AMPL_ERR)**2 + (AMPL*SIGMA_ERR)**2)
+      
+      WRITE(*,610) SIGMA_ERR, AMPL_ERR, AREA_ERR
+  610 FORMAT('sigma_err = ',E12.5,' ampl_err = ',E12.5,
+     *' area_err = ',E12.5)
       
       OPEN(15,FILE='data/final.dat',STATUS='UNKNOWN')
       DO I = 1, NF

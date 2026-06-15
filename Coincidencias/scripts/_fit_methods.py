@@ -46,6 +46,16 @@ def run_fortran_fit(x, y, x0_approx, fortran_bin='bin/gaussian_background'):
     except IndexError:
         return None
 
+    # Parse covariance matrix
+    err_params = {}
+    for line in out.split('\n'):
+        m = re.search(r'var_a\s*=\s*([\d.Ee+\-]+)\s+var_b\s*=\s*([\d.Ee+\-]+)\s+var_c\s*=\s*([\d.Ee+\-]+)', line)
+        if m: err_params['var_a'] = float(m.group(1)); err_params['var_b'] = float(m.group(2)); err_params['var_c'] = float(m.group(3))
+        m = re.search(r'cov_ab\s*=\s*([\d.Ee+\-]+)\s+cov_ac\s*=\s*([\d.Ee+\-]+)\s+cov_bc\s*=\s*([\d.Ee+\-]+)', line)
+        if m: err_params['cov_ab'] = float(m.group(1)); err_params['cov_ac'] = float(m.group(2)); err_params['cov_bc'] = float(m.group(3))
+        m = re.search(r'sigma_err\s*=\s*([\d.Ee+\-]+)\s+ampl_err\s*=\s*([\d.Ee+\-]+)\s+area_err\s*=\s*([\d.Ee+\-]+)', line)
+        if m: err_params['sigma_err'] = float(m.group(1)); err_params['ampl_err'] = float(m.group(2)); err_params['area_err'] = float(m.group(3))
+
     bg_m = re.search(r'Background: y =\s+([-\d.]+)\s+\+\s+([-\d.]+)', bg_line)
     if not bg_m:
         return None
@@ -83,16 +93,20 @@ def run_fortran_fit(x, y, x0_approx, fortran_bin='bin/gaussian_background'):
     y_fit_arr = amp * np.exp(-(x - x0)**2 / (2 * sigma**2)) + bg_line_arr
     resid_arr = y - y_fit_arr
 
+    dA = err_params.get('ampl_err', 0)
+    dsigma = err_params.get('sigma_err', 0)
+    darea = err_params.get('area_err', 0)
+
     return {
         'method': 'fortran',
         'xmin': x[0], 'xmax': x[-1],
-        'A': amp, 'dA': 0,
+        'A': amp, 'dA': dA,
         'x0': x0, 'dx0': 0,
-        'sigma': sigma, 'dsigma': 0,
+        'sigma': sigma, 'dsigma': dsigma,
         'fwhm': fwhm, 'dfwhm': 0,
         'bg': bg_line_arr[int(len(bg_line_arr)/2)], 'dbg': 0,
         'c1': b_bg_f, 'dc1': 0,
-        'area': area, 'darea': 0,
+        'area': area, 'darea': darea,
         'chi2': 0, 'ndf': 0, 'chi2_red': 0,
         'r_squared': 0,
         'bg_order': 'linear',
@@ -102,6 +116,7 @@ def run_fortran_fit(x, y, x0_approx, fortran_bin='bin/gaussian_background'):
         'a_bg': a_bg_f, 'b_bg': b_bg_f,
         'x0_re': x0_re, 'sigma_re': sigma_re,
         'shift': shift,
+        'err_params': err_params,
         '_raw_out': out,
     }
 

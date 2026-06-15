@@ -226,14 +226,6 @@ $$E[\mathrm{keV}] = a + b \cdot \text{canal}$$
 
 Permitiría expresar los picos de coincidencia en energía y verificar linealidad.
 
-### 8.2 Correlación angular con $^{60}$Co
-
-**Archivos disponibles:** `datos/60-Co-*.itx` (8 ángulos: 22.5°, 45°, 67.5°, 90°,
-112.5°, 135°, 157.5°, 180°).
-
-Permiten estudiar la correlación angular $W(\theta)$ de la cascada $\gamma$-$\gamma$
-para determinar espines y multipolaridades.
-
 ### 8.3 Caracterización del detector NaI
 
 **Dato faltante:** No se encontró ningún archivo con identificación "Mg4" o similar.
@@ -267,8 +259,7 @@ Se necesitaría:
    con resultados consistentes obtenidos mediante el código Fortran.
 
 6. **Limitaciones:** Sin calibración energética los resultados están en canales.
-   El análisis de correlación angular del $^{60}$Co y la caracterización del
-   detector NaI requieren datos adicionales no disponibles.
+   La caracterización del detector NaI requiere datos adicionales no disponibles.
 
 ---
 
